@@ -4,13 +4,13 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
-//REGISTER AN USER
+//REGSTER AN USER
 
 export const signUp = async (req, res, next) => {
   //Existing user check
   //Hashed password
   // User creation
-  // Token generate
+  // Token generateI
 
   const { name, email, password } = req.body;
 

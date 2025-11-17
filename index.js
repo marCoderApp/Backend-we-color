@@ -11,10 +11,16 @@ import debug from "debug";
 const app = express();
 dotenv.config();
 
+console.log("MONGO_URI:", process.env.MONGO_URI); // debug
+
 const connect = () => {
   mongoose
     .set("strictQuery", false)
-    .connect(`${process.env.MONGO_DB}`)
+    .connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+
     .then(() => {
       console.log("connected to DB");
       console.log(process.env.MONGO_DB)
